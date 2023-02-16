@@ -1,0 +1,219 @@
+:root {
+	--black: #1c1c1c;
+	--bluegtranspa: linear-gradient(to bottom right, rgba(123,162,184,0.75), rgba(52,96,120,0.75));
+	--bluegtranslu: linear-gradient(to bottom right, rgba(123,162,184,0.85), rgba(52,96,120,0.85));
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+body {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
+	background-image: url(../images/BG.jpg);
+	background-position: center;
+	background-size: cover;
+        background-attachment: fixed;
+	background-repeat: no-repeat;
+	font-family: verdana;
+}
+
+main {
+	padding-top: 135px;
+	padding-bottom: 50px;
+	width: 100vw;
+	flex-grow: 1;
+}
+
+.supportbg {
+	box-shadow: 0px 0px 25px rgba(0,0,0,0.75);
+	width: 100%;
+	height: 100%;
+	background-image: var(--bluegtranspa);
+	background-position: center;
+	background-size: cover;
+        background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.textContainer {
+	box-shadow: 0px 0px 25px rgba(0,0,0,0.25);
+	padding-top: 3px;
+	padding-bottom: 24px;
+	margin: auto;
+	background-color: white;
+	min-height: auto;
+	width: 75%;
+	z-index: 1
+}
+
+.textbg {
+	width: 100%;
+	height: auto;
+	transition: 0.3s;
+}
+
+.textbg:hover {
+	width: 100%;
+	height: auto;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	cursor: pointer;
+	background-color: rgba(108,122,137,0.5);
+}
+
+.text {
+	text-justify: inter-word;
+	text-align: justify;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+header {
+	display: flex;
+	gap: 10%;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	background-color: var(--black);
+	position: fixed;
+	z-index: 3;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: auto;
+}
+
+header .openBtn {
+	text-shadow: 0px 0px 25px black;
+	transition: all 0.3s ease;
+	color: white;
+	font-size: 35px;
+	cursor: pointer;
+}
+
+header .openBtn:hover, .sidenav .sideheader .closeBtn:hover {
+	font-size: 38px;
+	text-shadow: 0px 0px 10px white;
+}
+
+header .subheader {
+	box-shadow: 0px 0px 25px rgba(0,0,0,0.75);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: linear-gradient(to right, white, grey);
+	z-index: 3;
+	width: 100%;
+	height: auto;
+}
+
+.sidenav {
+	box-shadow: 0px 0px 25px 12.5px rgba(0,0,0,0.25);
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 4;
+	top: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	gap: 5%;
+	justify-content: flex-start;
+	align-items: center;
+	background-image: url(../images/Beach.jpeg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow-x: hidden;
+	transition: 0.5s;
+}
+
+.sidenav .sideheader {
+	box-shadow: 0px 0px 25px 12.5px rgba(0,0,0,0.5);
+	display: flex;
+	gap: 10%;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	width:100%;
+	height: auto;
+	background-image: var(--bluegtranslu);
+}
+
+.sidenav a {
+	white-space: nowrap;
+	transition: 0.3s;
+	text-decoration: none;
+}
+
+.sidenav a:not(.closeBtn) {
+	box-shadow: 0px 0px 25px 12.5px rgba(0,0,0,0.5);
+	width: 75%;
+	padding: 16px 8px 16px;
+	text-align: center;
+	font-size: 25px;
+	display: block;
+	background-color: rgba(0,0,0,0.75);
+	border-radius: 25px;
+	color: white;
+}
+
+.sidenav a:hover:not(.closeBtn, p a) {
+	font-size: 28px;
+	text-shadow: 0px 0px 10px white;
+}
+
+.sidenav .sideheader .closeBtn {
+	color: white;
+	text-shadow: 0px 0px 25px black;
+	font-size: 35px;
+	margin-left: 50px;
+}
+
+footer {
+	box-shadow: 0px 0px 25px rgba(0,0,0,0.75);
+	background-color: var(--black);
+	z-index: 3;
+	height: auto;
+	width: 100%;
+}
+
+.longlinedivider {
+	width: 85%;
+	height: 2.5px;
+	background-color: grey;
+	opacity: 0.5;
+	margin: auto;
+	border-radius: 25px;
+}
+
+.fade {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	pointer-events: none;
+	background-color: var(--black);
+	z-index: 4;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.logo {
+	border-radius: 100%;
+	width: 58px;
+	height: 58px;
+}
+
+@media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+}
